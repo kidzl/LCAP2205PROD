@@ -1,0 +1,57 @@
+{
+	"Caption": "Update SrvAuthors",
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"SystemItem": "Cancel",
+				"OnPress": "/MDKApp/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "Save",
+				"OnPress": "/MDKApp/Actions/SrvAuthors/SrvAuthors_UpdateEntity.action"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Caption": "",
+					"Controls": [
+						{
+							"Caption": "createdAt",
+							"_Name": "createdAt",
+							"Value": "{createdAt}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "createdBy",
+							"_Name": "createdBy",
+							"Value": "{createdBy}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "modifiedAt",
+							"_Name": "modifiedAt",
+							"Value": "{modifiedAt}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "modifiedBy",
+							"_Name": "modifiedBy",
+							"Value": "{modifiedBy}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					]
+				}
+			],
+			"_Name": "PageOneFormCell",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SrvAuthors_Edit",
+	"PrefersLargeCaption": true
+}

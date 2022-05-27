@@ -1,0 +1,12 @@
+{
+    "PopoverItems": [{
+            "Title": "Add SrvBooks",
+            "OnPress": "/MDKApp/Actions/SrvAuthors/NavToSrvAuthors_CreateSrvBooks.action"
+        },
+        {
+            "Title": "Delete",
+            "OnPress": "/MDKApp/Rules/SrvAuthors/SrvAuthors_DeleteConfirmation.js"
+        }
+    ],
+    "_Type": "Action.Type.PopoverMenu"
+}

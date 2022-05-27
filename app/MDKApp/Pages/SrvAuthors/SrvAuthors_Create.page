@@ -1,0 +1,52 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/MDKApp/Actions/CloseModalPage_Cancel.action",
+				"Position": "Left",
+				"SystemItem": "Cancel"
+			},
+			{
+				"OnPress": "/MDKApp/Actions/SrvAuthors/SrvAuthors_CreateEntity.action",
+				"Position": "Right",
+				"SystemItem": "Save"
+			}
+		]
+	},
+	"Caption": "Create SrvAuthors",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Caption": "createdAt",
+							"_Name": "createdAt",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "createdBy",
+							"_Name": "createdBy",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "modifiedAt",
+							"_Name": "modifiedAt",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "modifiedBy",
+							"_Name": "modifiedBy",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					]
+				}
+			],
+			"_Name": "FormCellContainer",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SrvAuthors_Create",
+	"PrefersLargeCaption": true
+}

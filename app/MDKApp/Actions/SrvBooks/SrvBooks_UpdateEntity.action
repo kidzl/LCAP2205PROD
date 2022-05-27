@@ -1,0 +1,21 @@
+{
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "Target": {
+        "EntitySet": "SrvBooks",
+        "Service": "/MDKApp/Services/service1.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties": {
+        "bookID": "#Control:bookID/#Value",
+        "title": "#Control:title/#Value",
+        "stock": "#Control:stock/#Value",
+        "price": "#Control:price/#Value",
+        "currency": "#Control:currency/#Value"
+    },
+    "UpdateLinks": [],
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": "/MDKApp/Actions/UpdateEntitySuccessMessage.action",
+    "OnFailure": "/MDKApp/Actions/UpdateEntityFailureMessage.action"
+}

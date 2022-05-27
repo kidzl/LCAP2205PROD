@@ -1,0 +1,98 @@
+{
+	"Caption": "SrvAuthors",
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/MDKApp/Actions/SrvAuthors/NavToSrvAuthors_Edit.action",
+				"Position": "Right",
+				"SystemItem": "Edit"
+			},
+			{
+				"OnPress": "/MDKApp/Actions/SrvAuthors/SrvAuthors_DetailPopover.action",
+				"Position": "Right",
+				"Caption": "More"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"DetailImage": "",
+						"HeadlineText": "{createdAt}",
+						"Subhead": "{createdBy}",
+						"Tags": [],
+						"BodyText": "",
+						"Footnote": "{modifiedBy}",
+						"Description": "{modifiedAt}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "createdAt",
+							"Value": "{createdAt}"
+						},
+						{
+							"KeyName": "createdBy",
+							"Value": "{createdBy}"
+						},
+						{
+							"KeyName": "modifiedAt",
+							"Value": "{modifiedAt}"
+						},
+						{
+							"KeyName": "modifiedBy",
+							"Value": "{modifiedBy}"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "books"
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"Description": "{stock}",
+						"DetailImage": "",
+						"DetailImageIsCircular": false,
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{title}",
+						"Footnote": "{price}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{currency}",
+						"Subhead": "{bookID}",
+						"SubstatusText": "",
+						"OnPress": "/MDKApp/Actions/SrvBooks/NavToSrvBooks_Detail.action"
+					},
+					"Target": {
+						"EntitySet": "{#Property:@odata.readLink}/books",
+						"Service": "/MDKApp/Services/service1.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"SrvBooks"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SrvAuthors_Detail",
+	"PrefersLargeCaption": true
+}

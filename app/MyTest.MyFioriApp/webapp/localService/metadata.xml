@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="MyTestService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="SrvBooks" EntityType="MyTestService.SrvBooks">
+                    <NavigationPropertyBinding Path="author" Target="SrvAuthors"/>
+                </EntitySet>
+                <EntitySet Name="SrvAuthors" EntityType="MyTestService.SrvAuthors">
+                    <NavigationPropertyBinding Path="books" Target="SrvBooks"/>
+                </EntitySet>
+            </EntityContainer>
+            <EntityType Name="SrvBooks">
+                <Key>
+                    <PropertyRef Name="bookID"/>
+                </Key>
+                <Property Name="bookID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="title" Type="Edm.String" MaxLength="100"/>
+                <Property Name="stock" Type="Edm.Int32"/>
+                <Property Name="price" Type="Edm.Decimal" Scale="2" Precision="10"/>
+                <Property Name="currency" Type="Edm.String" MaxLength="100"/>
+                <NavigationProperty Name="author" Type="MyTestService.SrvAuthors" Partner="books">
+                    <ReferentialConstraint Property="author_authorID" ReferencedProperty="authorID"/>
+                </NavigationProperty>
+                <Property Name="author_authorID" Type="Edm.Guid"/>
+            </EntityType>
+            <EntityType Name="SrvAuthors">
+                <Key>
+                    <PropertyRef Name="authorID"/>
+                </Key>
+                <Property Name="authorID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="createdAt" Type="Edm.String" MaxLength="100"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="100"/>
+                <Property Name="modifiedAt" Type="Edm.String" MaxLength="100"/>
+                <Property Name="modifiedBy" Type="Edm.String" MaxLength="100"/>
+                <NavigationProperty Name="books" Type="Collection(MyTestService.SrvBooks)" Partner="author"/>
+            </EntityType>
+            <Annotations Target="MyTestService.SrvAuthors/authorID">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
