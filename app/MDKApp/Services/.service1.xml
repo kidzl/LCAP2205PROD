@@ -32,11 +32,12 @@
           <PropertyRef Name="authorID"/>
         </Key>
         <Property Name="authorID" Type="Edm.Guid" Nullable="false"/>
-        <Property Name="createdAt" Type="Edm.String" MaxLength="100"/>
+        <Property Name="createdAt" Type="Edm.DateTimeOffset"/>
         <Property Name="createdBy" Type="Edm.String" MaxLength="100"/>
-        <Property Name="modifiedAt" Type="Edm.String" MaxLength="100"/>
+        <Property Name="modifiedAt" Type="Edm.DateTimeOffset"/>
         <Property Name="modifiedBy" Type="Edm.String" MaxLength="100"/>
         <NavigationProperty Name="books" Type="Collection(MyTestService.SrvBooks)" Partner="author"/>
+        <Property Name="date" Type="Edm.String" MaxLength="100"/>
       </EntityType>
       <Annotations Target="MyTestService.SrvAuthors/authorID">
         <Annotation Term="Core.Computed" Bool="true"/>

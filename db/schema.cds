@@ -16,9 +16,10 @@ entity Authors
 {
     key authorID : UUID
         @Core.Computed;
-    createdAt : String(100);
+    createdAt : DateTime;
     createdBy : String(100);
-    modifiedAt : String(100);
+    modifiedAt : DateTime;
     modifiedBy : String(100);
     books : Association to many Books on books.author = $self;
+    date : String(100);
 }
